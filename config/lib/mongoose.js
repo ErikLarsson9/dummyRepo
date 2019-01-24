@@ -26,7 +26,7 @@ module.exports.connect = function (callback) {
   var options = _.merge(config.db.options || {}, { useMongoClient: true });
 
   mongoose
-    .connect(config.db.uri, options)
+    .connect(process.env.MONGOLAB_URI, options)
     .then(function (connection) {
       // Enabling mongoose debug mode if required
       mongoose.set('debug', config.db.debug);
