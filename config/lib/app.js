@@ -52,7 +52,7 @@ module.exports.start = function start(callback) {
         console.log(chalk.green('MEAN.JS version: ' + config.meanjs['meanjs-version']));
       console.log('--');
 
-      if (callback) callback(app, db, config);
+      if (callback) callback(app, process.env.MONGOLAB_URI, config);
     });
 
   });
