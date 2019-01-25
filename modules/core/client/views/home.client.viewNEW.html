@@ -1,0 +1,19 @@
+<div ng-app="core" ng-controller="HomeController as home">
+  <b>Invoice:</b>
+  <div>
+    Quantity: <input type="number" min="0" ng-model="home.qty" required >
+  </div>
+  <div>
+    Costs: <input type="number" min="0" ng-model="home.cost" required >
+    <select ng-model="home.inCurr">
+      <option ng-repeat="c in home.currencies">{{c}}</option>
+    </select>
+  </div>
+  <div>
+    <b>Total:</b>
+    <span ng-repeat="c in home.currencies">
+      {{home.total(c) | currency:c}}
+    </span><br>
+    <button class="btn" ng-click="home.pay()">Pay</button>
+  </div>
+</div>
