@@ -1,5 +1,6 @@
-angular.module('invoice1', [])
-.controller('InvoiceController', function InvoiceController() {
+angular.module('core', [])
+.controller('HomeController', function HomeController() {
+  var vm = this;
   this.qty = 1;
   this.cost = 2;
   this.inCurr = 'EUR';
